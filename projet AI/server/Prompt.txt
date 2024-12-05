@@ -1,0 +1,44 @@
+I have a transcript of a YouTube video, and I need your help to create compelling short clips suitable for TikTok and YouTube Shorts. Below is the transcript:
+
+```
+```
+
+Please analyze the transcript and identify the most engaging moments. For each selected clip, provide the following details in JSON format:
+
+1. **Title**: A catchy and engaging title that encapsulates the essence of the clip.
+2. **Description**: A concise description that highlights the key moments or themes.
+3. **Hashtags**: A set of relevant and trending hashtags to enhance discoverability.
+4. **Viral Probability**: An estimated likelihood (in percentage) that the clip will go viral, based on its content and appeal.
+5. **Timestamp**: The start and end times of the clip in "mm:ss" format, ensuring clips are between 15 to 60 seconds long.
+
+Focus on moments that are likely to capture attention quickly, such as emotional highlights, surprising facts, or humorous segments. The output should be structured as follows:
+
+```json
+[
+  {
+    "title": "Engaging Title for Clip 1",
+    "description": "A brief summary of Clip 1's content.",
+    "hashtags": ["#Example", "#Clip1", "#Viral"],
+    "viral_probability": "80%",
+    "timestamp": {
+      "start": "01:15",
+      "end": "01:45"
+    }
+  },
+  {
+    "title": "Engaging Title for Clip 2",
+    "description": "A brief summary of Clip 2's content.",
+    "hashtags": ["#Example", "#Clip2", "#Trending"],
+    "viral_probability": "90%",
+    "timestamp": {
+      "start": "03:05",
+      "end": "03:50"
+    }
+  }
+  // Add more clips as needed
+]
+```
+
+Ensure each clip is crafted to maximize viewer engagement and shareability across short-form video platforms.
+
+i will now give it to you:

@@ -1,82 +1,70 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import BackImg from "../assets/cool-background.png";
+import Sidebar from "../commun/sidebar";
+import DeleteSVG from "../assets/delete.svg";
+import { motion } from 'framer-motion';
 
 const Dashboard = () => {
-    const buttonsInfo = [
-        { name: "DashBoard", path: "/" },
-        { name: "Create Video", path: "/createVideo" },
-        { name: "Detail Video", path: "/detailVideo" },
-    ];
 
     const Card = () => {
         return (
-            <div className="box">
-
+            <motion.div
+                initial={{ boxShadow: "0px 3px 10px rgba(13, 38, 76, 0.1)" }} // Initial shadow state
+                whileHover={{
+                    scale: 1.02,
+                    translateY: -3,
+                    boxShadow: "0px 9px 20px rgba(13, 38, 76, 0.19)",
+                    transition: { duration: 0.3, ease: "easeInOut" }
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }} // Transition for non-hover states
+                className='box'
+                style={{cursor: "pointer"}}
+            >
                 {/* Placeholder for video data */}
                 <div className="columns is-flex is-justify-content-center is-align-items-center has-text-centered">
+                    <div className="column"><img src={BackImg} alt="" style={{ objectFit: "cover", borderRadius: "0.5rem" }} /></div>
                     <div className="column">Video 1</div>
                     <div className="column">2024-01-01</div>
-                    <div className="column"><button className='button is-danger'>Supprimer</button></div>
-                    <div className="column"><button className='button is-primary'>Voir</button></div>
+                    <div className="column"><motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    
+                    className='button is-danger is-light'><img style={{ height: "1.5rem", width: "1.5rem", objectFit: "cover" }} src={DeleteSVG} alt="" /></motion.button></div>
 
                 </div>
 
-            </div>
+            </motion.div>
         );
     }
 
 
     return (
         <div>
-            <section className="hero is-success is-fullheight">
+            <section className="hero is-success is-fullheight" style={{ backgroundImage: `url(${BackImg})` }} >
                 <div className="hero-body container is-justify-content-center">
                     <div className="section " style={{ minWidth: "100%" }}>
                         <div className="columns">
-                            <div className="column is-one-fifth">
-                                <div className="box">
-                                    <div className="haut">
-                                        <h1 className='title is-4'>DashBoard</h1>
-                                    </div>
-                                    <hr />
-                                    <div className="bas">
-                                        <div className="buttons">
-                                            {buttonsInfo.map((button, index) => (
-                                                <Link
-                                                    key={index}
-                                                    to={button.path} // Ensure this points to your desired route
-                                                    className="button is-primary is-fullwidth mt-3"
-                                                >
-                                                    {button.name}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
+                            <Sidebar />
                             <div className="column">
                                 <div className="box">
                                     <div className="haut">
-                                        <h1 className='title is-4'>All Of Your Video: </h1>
+                                        <h1 className='title is-4'>All Of Your Video Made By AI : </h1>
                                     </div>
                                     <hr />
                                     <div className="bas">
                                         <div className="box">
                                             <div className="box">
                                                 <div className="columns is-flex is-justify-content-center is-align-items-center has-text-centered">
+                                                    <div className="column has-text-weight-bold">Preview</div>
                                                     <div className="column has-text-weight-bold">Nom De La Video</div>
                                                     <div className="column has-text-weight-bold">Date De Creation</div>
                                                     <div className="column has-text-weight-bold">Supprimer</div>
-                                                    <div className="column has-text-weight-bold">Voir</div>
                                                 </div>
                                             </div>
                                             <Card />
                                             <Card />
                                             <Card />
-                                     
-
 
                                         </div>
                                     </div>

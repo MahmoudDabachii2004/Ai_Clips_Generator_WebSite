@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Navigate, useLocation } from 'react-router-dom';
+import BackImg from "../assets/cool-background.png";
 
 const Auth = () => {
     // Get current location using useLocation hook
@@ -14,7 +15,7 @@ const Auth = () => {
     return (
         <div>
             {path === "login" ? (
-                <div className="hero is-primary is-fullheight">
+                <div className="hero  is-fullheight" style={{ backgroundImage: `url(${BackImg})` }} >
                     <div className="hero-body container is-justify-content-center">
                         <div className="section" style={{ minWidth: "50%" }}>
                             <div className="box" style={{ minWidth: "100%" }}>
@@ -32,7 +33,7 @@ const Auth = () => {
                                             <input className="input" type="password" placeholder="Your Password" />
                                         </div>
                                     </div>
-                                    <button type='submit' className='button is-success'>Login</button>
+                                    <button type='submit' className='button is-link'>Login</button>
                                     <div className="field mt-3">
                                         <label htmlFor="" className="label">Don't have an account?
                                             <Link to="/authentification/register"><span className='m-1'>Create Account</span></Link>
@@ -44,7 +45,7 @@ const Auth = () => {
                     </div>
                 </div>
             ) : (
-                <div className="hero is-primary is-fullheight">
+                <div className="hero is-primary is-fullheight" style={{ backgroundImage: `url(${BackImg})` }}>
                     <div className="hero-body container is-justify-content-center">
                         <div className="section" style={{ minWidth: "50%" }}>
                             <div className="box" style={{ minWidth: "100%" }}>
@@ -62,7 +63,7 @@ const Auth = () => {
                                             <input className="input" type="password" placeholder="Your Password" />
                                         </div>
                                     </div>
-                                    <button type='submit' className='button is-success'>Register</button>
+                                    <button type='submit' className='button is-link'>Register</button>
                                     <div className="field mt-3">
                                         <label htmlFor="" className="label">Already have an account?
                                             <Link to="/authentification/login"><span className='m-1'>Login</span></Link>
